@@ -1,8 +1,8 @@
 # SciFi UI Project
 
-Name:
+Name: Kieran Mac Hale
 
-Student Number: 
+Student Number: C16777089
 
 Fork this repository and use it a starter project for your assignment
 
