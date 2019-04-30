@@ -9,9 +9,13 @@ public class UI extends PApplet
         size(800, 800);
     }
     Star[] stars = new Star[800];
+
     Buttons WARP;
     Buttons STOP;
+    Buttons SLOW;
+
     Panel p;
+
     int speed = 1;
     boolean mouse;
 
@@ -26,6 +30,7 @@ public class UI extends PApplet
         //Buttons
         WARP = new Buttons(this,height/4,width/4,100,50,"WARP(W)",false);
         STOP = new Buttons(this,10,height/4,100,50,"STOP(S)",false);
+        SLOW = new Buttons(this,-200, height/4,100,50,"SLOW(Z)",false);
 
         //Panel
         p = new Panel(this,20,20);
@@ -42,6 +47,7 @@ public class UI extends PApplet
 
         WARP.render();
         STOP.render();
+        SLOW.render();
     }
 
     public void keyPressed(){
@@ -49,10 +55,10 @@ public class UI extends PApplet
             case 'w':
                 speed = speed + 19;
                 break;
-            case 'a':
+            case 'z':
                 speed = 2;
                 break;
-            case 'z':
+            case 's':
                 speed = 0;
                 break;
             
