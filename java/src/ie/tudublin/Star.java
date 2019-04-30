@@ -8,7 +8,6 @@ public class Star{
     private float posx;
     private float posy;
     private float posz;
-    private int speed = 1;
 
     //Star constructor
     public Star(UI ui, float posx, float posy, float posz){
@@ -20,7 +19,7 @@ public class Star{
 
     //Making the stars move
     public void update(){
-        posz = posz - speed;
+        posz = posz - ui.speed;
         if(posz < 1){
             posz = ui.width;
             posx = ui.random(-ui.width, ui.width);
