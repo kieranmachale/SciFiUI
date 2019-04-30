@@ -15,4 +15,12 @@ public class Star extends PApplet{
         posz = width;
     }
 
+    public void update(){
+
+    }
+
+    public void display(){
+        
+    }
+
 }

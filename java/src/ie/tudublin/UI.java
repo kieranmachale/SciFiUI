@@ -24,12 +24,13 @@ public class UI extends PApplet
         return keys[c] || keys [Character.toUpperCase(c)];
     }
     
+    Star [] stars = new Star[300];
+    int i;
 
     public void settings()
     {
         size(800, 800);
-        // Use fullscreen instead of size to make your interface fullscreen
-        //fullScreen(P3D); 
+        
     }
 
     public void setup()
@@ -37,6 +38,10 @@ public class UI extends PApplet
         b = new Button(this, 50, 50, 100, 50, "I am a button");
         mc = new MovingCircle(this, width / 2, height * .75f, 50);
         radar = new Radar(this, 1, width / 2, height / 2, 100);
+
+        for(i = 0; i < stars.length; i++){
+            stars[i] = new Star();
+        }
     }
 
     Radar radar;
@@ -44,6 +49,12 @@ public class UI extends PApplet
     public void draw()
     {
         background(0);
+        
+        for(i = 0; i < stars.length; i++){
+            stars[i].update();
+            stars[i].display();
+        }
+
         b.render();
 
         mc.update();
