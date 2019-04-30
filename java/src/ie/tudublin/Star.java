@@ -1,32 +1,37 @@
 package ie.tudublin;
-import processing.core.PApplet;
 
 //Creating Star class
-public class Star extends PApplet{
+public class Star{
     
-    float posx;
-    float posy;
-    float posz;
+    //Star class fields
+    private UI ui;
+    private float posx;
+    private float posy;
+    private float posz;
+    private int speed = 1;
 
     //Star constructor
-    public Star(){
-        posx = random(0, width);
-        posy = random(0, height);
-        posz = width;
+    public Star(UI ui, float posx, float posy, float posz){
+        this.ui = ui;
+        this.posx = ui.random(0, ui.width);
+        this.posy = ui.random(0, ui.height);
+        this.posz = ui.width;
     }
 
+    //Making the stars move
     public void update(){
-        posz = posz - 1;
+        posz = posz - speed;
     }
 
-    public void show(){
-        fill(255);
-        noStroke();
+    //Creating star shape
+    public void display(){
+        ui.fill(255);
+        ui.noStroke();
 
-        float divx = map(posx/posz,0,1,0,width);
-        float divy = map(posy/posz,0,1,0,height);
+        float divx = ui.map(posx / posz,0,1,0,ui.width);
+        float divy = ui.map(posy / posz,0,1,0,ui.height);
 
-        ellipse(divx, divy, 8,8);
+        ui.ellipse(divx, divy, 8,8);
     }
 
 }
