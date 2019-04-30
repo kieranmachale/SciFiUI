@@ -13,14 +13,21 @@ public class Star{
     //Star constructor
     public Star(UI ui, float posx, float posy, float posz){
         this.ui = ui;
-        this.posx = ui.random(0, ui.width);
-        this.posy = ui.random(0, ui.height);
-        this.posz = ui.width;
+        this.posx = posx;
+        this.posy = posy;
+        this.posz = posz;
     }
 
     //Making the stars move
     public void update(){
         posz = posz - speed;
+        if(posz < 1){
+            posz = ui.width;
+            posx = ui.random(-ui.width, ui.width);
+            posy = ui.random(-ui.width, ui.width);
+
+
+        }
     }
 
     //Creating star shape
