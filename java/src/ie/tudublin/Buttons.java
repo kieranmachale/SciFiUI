@@ -10,8 +10,9 @@ public class Buttons
     private float width;
     private float height;
     private String text;
+    private boolean mouse;
 
-    public Buttons(UI ui, float x, float y, float width, float height, String text)
+    public Buttons(UI ui, float x, float y, float width, float height, String text, boolean mouse)
     {
         this.ui = ui;
         this.x = x;
@@ -19,6 +20,7 @@ public class Buttons
         this.width = width;
         this.height = height;
         this.text = text;
+        this.mouse = mouse;
     }
 
     public void render()
@@ -28,5 +30,7 @@ public class Buttons
         ui.rect(x, y, width, height);
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
         ui.text(text, x + width * 0.5f, y + height * 0.5f);
+
     }
+
 }
