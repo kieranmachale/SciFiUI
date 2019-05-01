@@ -6,6 +6,8 @@ Student Number: C16777089
 
 Fork this repository and use it a starter project for your assignment
 
+Youtube link: https://www.youtube.com/watch?v=kji68Ztqgpk&feature=youtu.be
+
 # Description of the assignment
 To create a science fiction inspired UI using object oriented programming in java.
 
