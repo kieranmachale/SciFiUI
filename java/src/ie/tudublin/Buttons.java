@@ -25,9 +25,10 @@ public class Buttons
 
     public void render()
     {
-        ui.noFill();
+        ui.fill(0);
         ui.stroke(255);
         ui.rect(x, y, width, height);
+        ui.fill(255);
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
         ui.text(text, x + width * 0.5f, y + height * 0.5f);
 

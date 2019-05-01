@@ -10,6 +10,9 @@ public class UI extends PApplet
     }
     Star[] stars = new Star[800];
 
+    RadarM radar;
+    Circle mc;
+
     Buttons WARP;
     Buttons STOP;
     Buttons SLOW;
@@ -27,13 +30,18 @@ public class UI extends PApplet
                 stars[i] = new Star(this, random(-width,width), random(-height,height), random(width));
         }
 
-        //Buttons
-        WARP = new Buttons(this,height/4,width/4,100,50,"WARP(W)",false);
-        STOP = new Buttons(this,10,height/4,100,50,"STOP(S)",false);
-        SLOW = new Buttons(this,-200, height/4,100,50,"SLOW(Z)",false);
-
         //Panel
-        p = new Panel(this,20,20);
+        p = new Panel(this,-400,height/5,width,height/2);
+
+        //Buttons
+        WARP = new Buttons(this,height/4,width/4,85,50,"WARP(W)",false);
+        STOP = new Buttons(this,10,height/4,85,50,"STOP(S)",false);
+        SLOW = new Buttons(this,-200, height/4,85,50,"SLOW(Z)",false);
+
+        //Radar
+        mc = new Circle(this, width / 2, height * .75f, 50);
+        radar = new RadarM(this, 1, width / 2, height / 2, 100);
+
     }
 
     //Drawing UI
@@ -45,11 +53,20 @@ public class UI extends PApplet
             stars[i].display();
         }
 
+        p.render();
+
         WARP.render();
         STOP.render();
         SLOW.render();
+
+        mc.update();
+        mc.render();
+
+        radar.update();
+        radar.render();
     }
 
+    //Using keyPressed to change ship speed
     public void keyPressed(){
         switch(key){
             case 'w':
